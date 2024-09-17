@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const processFile = (callback) => {
+const readFile = (callback) => {
 
     const directory = path.join( '../sample_input_for_students');
     const file = 'sample_01.txt';
@@ -17,23 +17,49 @@ const processFile = (callback) => {
     });
 }
 
+let uniqueintegers = {};
+
 const readNextItemFromFile = (data) => {
-    const lines = data.split('\n');
+  const lines = data.split("\n"); // Split the data into lines
 
-    const uniqueintegers = {};
+  for (i = 0; i < lines.length; i++) {
+    const line = lines[i].trim(); // Trim each line to remove extra spaces
 
-    for (i=0; i<lines.length; i++){
-        const line = lines[i].trim();
-        if (line === ''){
-            continue;
-        }
-        const number = parseInt(line, 10);
-        if (isNaN(number)){
-            console.error('Invalid number: ', line);
-            continue;
-        }
+    if (line === "") {
+      continue; // Skip empty lines
     }
-    console.log('Unique integers: ', Object.keys(uniqueintegers));
-}
+    const number = parseInt(line, 10);  // Try to convert the line to an integer
 
-processFile(readNextItemFromFile);
+    if (isNaN(number)) {
+      // This block handles valid numbers
+      console.error("Invalid number: ", line); // Print error message
+    } 
+    else {
+      uniqueintegers[number] = true; // store the unique integers
+    }
+  }
+
+  let uniqueintegerslist = Object.keys(uniqueintegers).map(Number); // Store the unique integers in an array of numbers
+
+  uniqueintegerslist = sorting(uniqueintegerslist); //Sort the unique integers
+
+  console.log(uniqueintegerslist); // Print the sorted unique integers
+};
+
+const sorting = (arr) => {
+    let n = arr.length;
+
+    for(i = 0; i < n-1; i++) {
+        for(j = 0; j < n-i-1; j++) {
+            if(arr[j] > arr[j+1]) {
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    };
+    return arr;
+};
+
+readFile(readNextItemFromFile);
+
