@@ -86,7 +86,7 @@ const writeToNewDirectory = (uniqueintegerslist, outputFile) => {
   const outputFilePath = path.join(outputDirectory, outputFile);
   const dataToWrite = uniqueintegerslist.join("\n"); // Convert sorted integers to a newline-separated string
 
-  // Write the sorted integers to a new file
+  // Writing the sorted integers to a new file
   fs.writeFile(outputFilePath, dataToWrite, (err) => {
     if (err) {
       console.error("Error writing file: ", err);
@@ -97,3 +97,18 @@ const writeToNewDirectory = (uniqueintegerslist, outputFile) => {
 };
 
 readFile(readNextItemFromFile);
+
+
+// The codes in the quotes are for checking the Performance and Memory Usage
+
+```
+const starttime = performance.now();
+
+const endTime = performance.now();
+
+const executionTime = endTime - starttime;
+
+const memoryUsage = process.memoryUsage().heapUsed / 1024 / 1024;
+
+console.log("Execution time: " + executionTime + "ms");
+```
