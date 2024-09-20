@@ -2,14 +2,14 @@
 # Unique Integers Project
 
 ## Overview
-This project is designed to read a list of integers from an input file, process them to remove duplicates, and output the list of unique integers in sorted order. I have used JS as the programming language.
+This Node.js project reads a text file containing integers, filters out invalid and duplicate entries, sorts the valid integers in ascending order using a bubble sort algorithm, and then writes the result to a new text file in a separate directory.
 
 
 ### Features:
-- Handles positive and negative integers.
-- Skips empty lines, lines with invalid or non-integer data, and lines containing multiple integers.
-- Sorts the unique integers manually using a custom sorting algorithm.
-- Outputs the sorted unique integers, one per line, in the result file.
+- Input Validation: The program only processes text files and ignores invalid entries, such as lines with multiple integers, non-integer - lines, and integers outside a 4-digit range (-9999 to 9999).
+- Sorting: Implements a basic bubble sort algorithm to sort the unique integers.
+- File Output: Sorted integers are written to a new file in a designated output directory.
+- Performance Tracking: Tracks and logs the execution time and memory usage.
 
 ## How to Run
 
