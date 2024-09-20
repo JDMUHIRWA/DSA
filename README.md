@@ -15,22 +15,21 @@ This project is designed to read a list of integers from an input file, process 
 
 1. Clone this repository or download the source code.
 2. Ensure that you have [Node.js](https://nodejs.org/) installed on your system.
-3. Place the input files in the `/sample_inputs/` folder.
+3. Place the input files in the `/sample_inputs_for_students/` folder.
 4. Run the script as follows:
 
 ```bash
-node /dsa/hw01/code/src/UniqueInt.js /path/to/input/file /path/to/output/file
+node /dsa/hw01/code/src/mystructure.js /path/to/input/file
 ```
 
 For example:
 
 ```bash
-node /dsa/hw01/code/src/UniqueInt.js sample_inputs/sample_input_01.txt sample_results/sample_input_01_results.txt
+node /dsa/hw01/code/src/mysturcture.js sample_inputs_for_students/sample_01.txt
 ```
 
 This will generate an output file in the `sample_results/` folder with the sorted unique integers.
 
-## Sample Input/Output
 
 ### Sample Input (sample_input_01.txt)
 ```
@@ -73,9 +72,9 @@ This will generate an output file in the `sample_results/` folder with the sorte
 Several sample input files are provided in the `/sample_inputs/` folder. Run the program with these files and compare the results in the `/sample_results/` folder to verify correctness.
 
 ## Author
-Emily (Software Engineering Student)
+Jean de Dieu Muhirwa Harerimana (Software Engineering Student)
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the ALU.
 
 ---
