@@ -54,15 +54,16 @@ This will generate an output file in the `sample_results/` folder with the sorte
 
 ## Functions Overview
 
-### `processFile(inputFilePath, outputFilePath)`
+### `readFile(callback)`
 - Reads the input file line by line.
-- Cleans and validates each line.
-- Tracks unique integers and stores them for sorting.
-- Writes the sorted unique integers to the output file.
 
 ### `readNextItemFromFile(inputFileStream)`
 - Cleans up whitespace.
 - Skips invalid data and malformed lines.
+- Convert the line to an integer
+- Split the data into lines
+- Store the unique integers in an array of numbers
+- Sort the unique integers
 
 ## Constraints
 - The integers range from -1023 to 1023.
